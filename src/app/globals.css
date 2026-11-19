@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+/* ---------- Brand system (see /direction.md) ---------- */
+@theme {
+  --color-bg: #f5f4ef;
+  --color-surface: #ffffff;
+  --color-ink: #0b1a30;
+  --color-ink-2: #13284a;
+  --color-muted: #5a6475;
+  --color-on-dark-muted: #a9b3c4;
+  --color-go: #3fd15a;
+  --color-go-deep: #1d7a33;
+  --color-line: rgb(11 26 48 / 0.12);
+  --color-line-dark: rgb(255 255 255 / 0.14);
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --text-display-xl: clamp(3.25rem, min(1.2rem + 9.4vw, 17.5svh), 8.25rem);
+  --text-display-xl--line-height: 0.92;
+  --text-display-l: clamp(2.5rem, 1.1rem + 5.6vw, 5.25rem);
+  --text-display-l--line-height: 0.96;
+  --text-h2: clamp(2rem, 1.25rem + 3vw, 3.5rem);
+  --text-h2--line-height: 1.02;
+  --text-h3: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+  --text-h3--line-height: 1.15;
+  --text-body-l: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --text-body-l--line-height: 1.5;
+  --text-label: 0.78125rem;
+  --text-label--line-height: 1.2;
+
+  --radius-control: 10px;
+  --radius-card: 20px;
+  --radius-panel: 32px;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  ::selection {
+    background: var(--color-go);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-go-deep);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  .on-dark :focus-visible {
+    outline-color: var(--color-go);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  [id] {
+    scroll-margin-top: 88px;
+  }
+}
+
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+  @media (min-width: 768px) {
+    .container-x { padding-inline: 32px; }
+  }
+  .section-y {
+    padding-block: clamp(96px, 14vw, 176px);
+  }
+  .label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Masked line reveal used by RevealText (React Bits SplitText adaptation) */
+  .split-line-mask {
+    display: block;
+    overflow: clip;
+    overflow-clip-margin: 0.12em;
+    padding-bottom: 0.06em;
+    margin-bottom: -0.06em;
+  }
+
+  /* ---------- Hero entrance (pure CSS so the h1 paints on first frame) ---------- */
+  .hero-line {
+    display: block;
+    padding-bottom: 0.04em;
+  }
+  .hero-line > span {
+    display: block;
+    animation: hero-lift 0.9s var(--ease-out-soft) both;
+  }
+  .hero-line:nth-child(2) > span { animation-delay: 0.07s; }
+  .hero-rise {
+    animation: hero-lift 0.9s var(--ease-out-soft) 0.25s both;
+  }
+  .hero-fade {
+    animation: hero-fade 0.9s var(--ease-out-soft) 0.3s both;
+  }
+  .hero-road-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: road-draw 2.2s var(--ease-in-out-soft) 0.2s forwards;
+  }
+
+  /* Crash mark: car rolls in, bike kicks up, spark pops (nav only) */
+  .mark-spark, .mark-bike { transform-box: fill-box; }
+  .mark-spark { transform-origin: center; }
+  .mark-bike { transform-origin: 100% 100%; }
+  .mark-animate .mark-car { animation: mark-car 0.8s var(--ease-out-soft) 0.1s both; }
+  .mark-animate .mark-bike { animation: mark-bike 0.7s cubic-bezier(0.3, 1.5, 0.5, 1) 0.55s both; }
+  .mark-animate .mark-spark { animation: mark-spark 0.6s cubic-bezier(0.3, 1.7, 0.5, 1) 0.6s both; }
+  .wordmark:hover .mark-spark { animation: mark-spark-pulse 0.5s var(--ease-out-soft); }
+
+  /* FAQ disclosure */
+  .faq-item summary { list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item .faq-icon { transition: transform 0.45s var(--ease-out-soft); }
+  .faq-item[open] .faq-icon { transform: rotate(45deg); }
+  .faq-item::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition: block-size 0.5s var(--ease-out-soft), content-visibility 0.5s allow-discrete;
+  }
+  .faq-item[open]::details-content { block-size: auto; }
+
+  /* Mobile call bar */
+  .call-bar {
+    transform: translateY(calc(100% + 24px));
+    transition: transform 0.6s var(--ease-out-soft);
+  }
+  .call-bar[data-visible="true"] { transform: translateY(0); }
+  .nav-call-mobile { transition: opacity 0.4s var(--ease-out-soft); }
+  html[data-callbar="true"] .nav-call-mobile { opacity: 0; pointer-events: none; }
+}
+
+:root { interpolate-size: allow-keywords; }
+
+/* Reduced transparency: solid surfaces instead of blur */
+@media (prefers-reduced-transparency: reduce) {
+  header.fixed { background-color: var(--color-bg) !important; backdrop-filter: none !important; }
+  .call-bar-shell { background-color: var(--color-ink) !important; backdrop-filter: none !important; }
+}
+
+/* Increased contrast: darker secondary text and firmer hairlines */
+@media (prefers-contrast: more) {
+  :root {
+    --color-muted: #3d4655;
+    --color-on-dark-muted: #d3d9e3;
+    --color-line: rgb(11 26 48 / 0.32);
+    --color-line-dark: rgb(255 255 255 / 0.35);
+  }
+}
+
+@keyframes hero-rise {
+  from { transform: translateY(105%); }
+  to { transform: translateY(0); }
+}
+@keyframes hero-lift {
+  from { transform: translateY(14px); }
+  to { transform: translateY(0); }
+}
+@keyframes hero-fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes mark-car {
+  from { transform: translateX(-9px); }
+  to { transform: translateX(0); }
+}
+@keyframes mark-bike {
+  from { transform: rotate(-12deg); }
+  to { transform: rotate(0); }
+}
+@keyframes mark-spark {
+  from { transform: scale(0) rotate(-40deg); }
+  to { transform: scale(1) rotate(0); }
+}
+@keyframes mark-spark-pulse {
+  50% { transform: scale(1.18) rotate(12deg); }
+}
+@keyframes road-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-line > span,
+  .hero-rise,
+  .hero-fade { animation: none; }
+  .hero-road-draw { animation: none; stroke-dashoffset: 0; }
+  .mark-animate .mark-car, .mark-animate .mark-bike, .mark-animate .mark-spark, .wordmark:hover .mark-spark { animation: none; }
+  .call-bar { transition: none; }
+  .faq-item::details-content { transition: none; }
+  .faq-item .faq-icon { transition: none; }
+}
