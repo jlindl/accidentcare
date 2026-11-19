@@ -4,6 +4,7 @@ import FactStrip from "@/components/FactStrip";
 import WhoWeHelp from "@/components/WhoWeHelp";
 import Services from "@/components/Services";
 import RoadBack from "@/components/RoadBack";
+import Reviews from "@/components/Reviews";
 import CostExplainer from "@/components/CostExplainer";
 import AtTheScene from "@/components/AtTheScene";
 import Faq from "@/components/Faq";
@@ -55,6 +56,7 @@ export default function Home() {
         <div className="pt-2 sm:pt-4">
           <RoadBack />
         </div>
+        <Reviews />
         <CostExplainer />
         <AtTheScene />
         <Faq />

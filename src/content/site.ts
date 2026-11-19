@@ -147,3 +147,22 @@ export const faqs = [
 
 export const disclaimer =
   "Accident Care provides accident claim management for non-fault road traffic accidents in the UK. Eligibility depends on the circumstances of each accident. Information on this website is general guidance, not legal advice.";
+
+// ---------- Reviews ----------
+// Real reviews only. Paste them exactly as written, with the reviewer's permission
+// (or from a public Google/Trustpilot listing). Until this list has entries, the
+// Reviews section does not render in production. The dev server shows labelled
+// placeholders so the layout can be judged.
+export type Review = {
+  quote: string;
+  name: string; // e.g. "Amir K." (first name + initial)
+  detail?: string; // e.g. "PCO driver, Luton"
+  rating?: 1 | 2 | 3 | 4 | 5;
+  source: "Google" | "Trustpilot" | "Facebook" | "Direct";
+  date?: string; // e.g. "October 2026"
+};
+
+export const reviews: Review[] = [];
+
+// Overall rating badge, e.g. { rating: 4.9, count: 37, source: "Google", url: "https://..." }.
+export const reviewSummary: { rating: number; count: number; source: string; url: string } | null = null;
