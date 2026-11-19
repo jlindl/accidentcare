@@ -23,9 +23,9 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-500 ease-[var(--ease-out-soft)] ${
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,box-shadow] duration-500 ease-[var(--ease-out-soft)] ${
         scrolled
-          ? "border-b border-line bg-bg"
+          ? "border-b border-line bg-white/95 shadow-[0_10px_30px_-22px_rgb(15_31_61/0.35)] backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -38,7 +38,7 @@ export default function Nav() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="rounded-full px-4 py-2.5 text-[0.9375rem] text-ink/75 transition-[color,background-color] duration-300 hover:bg-ink/[0.05] hover:text-ink"
+                className="rounded-full px-4 py-2.5 text-[0.9375rem] text-ink/75 transition-[color,background-color] duration-300 hover:bg-go-soft hover:text-go-deep"
               >
                 {l.label}
               </a>

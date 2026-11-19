@@ -4,7 +4,7 @@ const facts = ["No win, no fee", "Anywhere in the UK", "Drivers, riders, passeng
 
 export default function FactStrip() {
   return (
-    <div className="border-y border-line bg-bg/80">
+    <div className="border-y border-line bg-surface">
       <ul className="container-x grid grid-cols-2 lg:grid-cols-4" aria-label="At a glance">
         {facts.map((f, i) => (
           <li

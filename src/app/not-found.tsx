@@ -17,8 +17,8 @@ export default function NotFound() {
         preserveAspectRatio="xMaxYMid slice"
         className="absolute inset-y-0 right-0 -z-10 h-full w-[70%] opacity-25 md:opacity-100"
       >
-        <path d="M820 80C560 120 640 380 420 420C230 455 300 640 120 700" fill="none" stroke="#3fd15a" strokeWidth="46" strokeLinecap="round" />
-        <path d="M820 80C560 120 640 380 420 420C230 455 300 640 120 700" fill="none" stroke="#f5f4ef" strokeWidth="2.5" strokeDasharray="22 22" />
+        <path d="M820 80C560 120 640 380 420 420C230 455 300 640 120 700" fill="none" stroke="#2563eb" strokeWidth="46" strokeLinecap="round" />
+        <path d="M820 80C560 120 640 380 420 420C230 455 300 640 120 700" fill="none" stroke="#f5f8fe" strokeWidth="2.5" strokeDasharray="22 22" />
       </svg>
       <div className="container-x flex h-[72px] items-center">
         <Link href="/" className="-m-2 rounded-[10px] p-2" aria-label="Accident Care home">

@@ -9,7 +9,7 @@ function Stars({ rating }: { rating: number }) {
       {Array.from({ length: 5 }, (_, i) => (
         <Star
           key={i}
-          className={`size-4 ${i < rating ? "fill-go text-go" : "fill-transparent text-ink/20"}`}
+          className={`size-4 ${i < rating ? "fill-[#f5a524] text-[#f5a524]" : "fill-transparent text-ink/20"}`}
           strokeWidth={1.5}
           aria-hidden="true"
         />
@@ -42,7 +42,7 @@ export default function Reviews() {
               href={reviewSummary.url}
               target="_blank"
               rel="noopener"
-              className="group flex w-fit items-center gap-4 rounded-[20px] border border-line bg-surface px-5 py-4 transition-[border-color] hover:border-ink/30 lg:col-span-4 lg:col-start-9 lg:justify-self-end"
+              className="group flex w-fit items-center gap-4 card card-hover px-5 py-4 lg:col-span-4 lg:col-start-9 lg:justify-self-end"
             >
               <span className="font-display text-[2.5rem] font-bold leading-none tracking-[-0.04em] tabular-nums">
                 {reviewSummary.rating.toFixed(1)}
@@ -62,7 +62,7 @@ export default function Reviews() {
             <li
               key={`${r.name}-${i}`}
               data-reveal-item
-              className="relative flex flex-col rounded-[20px] border border-line bg-surface p-7 sm:p-8"
+              className="card card-hover relative flex flex-col p-7 sm:p-8"
             >
               {r.rating && <Stars rating={r.rating} />}
               <blockquote className="mt-6 flex-1">

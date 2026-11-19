@@ -27,6 +27,7 @@ export default function Reveal({ as: Tag = "div", children, className = "", stag
         duration: 1,
         ease: EASE_OUT,
         stagger: stagger ?? 0,
+        clearProps: "transform,opacity",
         scrollTrigger: { trigger: el, start: "top 86%", once: true },
       });
     },

@@ -34,9 +34,9 @@ export default function WhoWeHelp() {
               <li
                 key={a.key}
                 data-reveal-item
-                className="flex flex-col rounded-[20px] border border-line bg-surface p-6 sm:last:col-span-2 lg:col-span-2 lg:min-h-[260px] lg:last:col-span-3 lg:[&:nth-child(4)]:col-span-3 xl:col-span-1 xl:min-h-[300px] xl:last:col-span-1 xl:[&:nth-child(4)]:col-span-1"
+                className="card card-hover flex flex-col p-6 sm:last:col-span-2 lg:col-span-2 lg:min-h-[260px] lg:last:col-span-3 lg:[&:nth-child(4)]:col-span-3 xl:col-span-1 xl:min-h-[300px] xl:last:col-span-1 xl:[&:nth-child(4)]:col-span-1"
               >
-                <span className="grid size-12 place-items-center rounded-full bg-bg text-ink">
+                <span className="icon-well size-12">
                   <Icon className="size-[22px]" strokeWidth={1.5} aria-hidden="true" />
                 </span>
                 <h3 className="pt-8 text-h3 sm:pt-12 xl:pt-20">{a.title}</h3>

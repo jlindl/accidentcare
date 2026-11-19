@@ -24,19 +24,19 @@ export default function CallButton({
   }[size];
   const colours =
     variant === "go"
-      ? "bg-go text-ink hover:bg-[#52dc6b] shadow-[inset_0_-2px_0_rgb(11_26_48/0.12)]"
+      ? "bg-go text-white hover:bg-go-deep shadow-[0_10px_24px_-12px_rgb(37_99_235/0.7)] hover:shadow-[0_18px_34px_-14px_rgb(37_99_235/0.75)]"
       : "bg-ink text-white hover:bg-ink-2";
   const iconWrap =
-    variant === "go" ? "bg-ink text-go" : "bg-go text-ink";
+    variant === "go" ? "bg-white/20 text-white" : "bg-go text-white";
 
   return (
     <a
       href={site.phoneHref}
-      className={`group inline-flex items-center justify-center rounded-full font-medium tracking-[-0.01em] transition-[background-color,transform] duration-300 ease-[var(--ease-out-soft)] active:scale-[0.98] ${sizes} ${colours} ${className}`}
+      className={`group inline-flex items-center justify-center rounded-full font-medium tracking-[-0.01em] transition-[background-color,box-shadow,transform] duration-300 ease-[var(--ease-out-soft)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] ${sizes} ${colours} ${className}`}
       aria-label={showNumber ? undefined : `${label} ${site.phoneDisplay}`}
     >
       <span
-        className={`grid shrink-0 place-items-center rounded-full transition-transform duration-500 ease-[var(--ease-out-soft)] group-hover:-rotate-12 ${iconWrap} ${
+        className={`grid shrink-0 place-items-center rounded-full transition-transform duration-500 ease-[var(--ease-out-soft)] group-hover:-rotate-12 group-hover:scale-110 ${iconWrap} ${
           size === "sm" ? "size-7" : "size-8"
         }`}
         aria-hidden="true"

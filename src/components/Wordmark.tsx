@@ -7,12 +7,12 @@ type MarkProps = { tone?: Tone; className?: string; animate?: boolean };
  * Spark colours live only in this mark.
  */
 export function Mark({ tone = "light", className = "", animate = false }: MarkProps) {
-  const ink = tone === "light" ? "#0b1a30" : "#ffffff";
-  const cut = tone === "light" ? "#f5f4ef" : "#0b1a30";
+  const ink = tone === "light" ? "#0f1f3d" : "#ffffff";
+  const cut = tone === "light" ? "#f5f8fe" : "#0f1f3d";
   const a = animate ? " mark-animate" : "";
   return (
     <svg viewBox="0 0 72 38" aria-hidden="true" className={`overflow-visible${a} ${className}`}>
-      <path d="M3 35.2H69" stroke="#3fd15a" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M3 35.2H69" stroke="#2563eb" strokeWidth="2.4" strokeLinecap="round" />
       <g className="mark-car">
         <g stroke={ink} strokeWidth="1.7" strokeLinecap="round" opacity="0.4">
           <path d="M2 17h5" />
@@ -66,7 +66,7 @@ export default function Wordmark({ tone = "light", className = "", animate = fal
           tone === "light" ? "text-ink" : "text-white"
         }`}
       >
-        Accident <span className={tone === "light" ? "text-go-deep" : "text-go"}>Care</span>
+        Accident <span className={tone === "light" ? "text-go" : "text-go-bright"}>Care</span>
       </span>
     </span>
   );

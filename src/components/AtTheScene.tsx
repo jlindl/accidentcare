@@ -26,20 +26,20 @@ export default function AtTheScene() {
               <li
                 key={item.title}
                 data-reveal-item
-                className={`grid grid-cols-[3.5rem_1fr] gap-x-4 border-t border-line py-8 sm:grid-cols-[5rem_1fr] sm:gap-x-6 ${
+                className={`group grid grid-cols-[3.25rem_1fr] gap-x-4 border-t border-line py-8 sm:grid-cols-[4.5rem_1fr] sm:gap-x-6 ${
                   isLast ? "border-b" : ""
                 }`}
               >
                 <span
-                  className={`font-display text-[2rem] font-bold leading-none tracking-[-0.04em] tabular-nums sm:text-[2.5rem] ${
-                    isLast ? "text-go-deep" : "text-ink/50"
+                  className={`grid size-11 place-items-center rounded-full font-display text-[1.125rem] font-bold tabular-nums transition-[background-color,color,transform] duration-500 ease-[var(--ease-out-soft)] group-hover:scale-110 sm:size-14 sm:text-[1.375rem] ${
+                    isLast ? "bg-go text-white" : "bg-go-soft text-go-deep group-hover:bg-go group-hover:text-white"
                   }`}
                   aria-hidden="true"
                 >
                   {i + 1}
                 </span>
                 <div>
-                  <h3 className="text-h3">{item.title}</h3>
+                  <h3 className="text-h3 transition-colors duration-300 group-hover:text-go-deep">{item.title}</h3>
                   <p className="mt-2 max-w-[52ch] text-[1rem] leading-[1.6] text-muted">{item.line}</p>
                   {isLast && <CallButton size="md" className="mt-6" />}
                 </div>

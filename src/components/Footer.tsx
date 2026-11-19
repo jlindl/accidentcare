@@ -21,7 +21,7 @@ export default function Footer() {
           </p>
           <a
             href={site.phoneHref}
-            className="mt-8 inline-block py-1 font-display text-[1.75rem] font-bold tracking-[-0.03em] tabular-nums text-white transition-colors hover:text-go"
+            className="mt-8 inline-block py-1 font-display text-[1.75rem] font-bold tracking-[-0.03em] tabular-nums text-white transition-colors hover:text-go-bright"
           >
             {site.phoneDisplay}
           </a>
@@ -29,7 +29,7 @@ export default function Footer() {
             href={site.whatsappHref}
             target="_blank"
             rel="noopener"
-            className="mt-2 flex w-fit items-center gap-2.5 py-2 text-[0.9688rem] text-white/85 transition-colors hover:text-go"
+            className="mt-2 flex w-fit items-center gap-2.5 py-2 text-[0.9688rem] text-white/85 transition-colors hover:text-go-bright"
           >
             <WhatsAppIcon className="size-[18px]" />
             Message us on WhatsApp
@@ -50,7 +50,7 @@ export default function Footer() {
           <ul className="mt-3 text-[0.9688rem]">
             {pageLinks.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="inline-flex min-h-10 items-center text-white/85 transition-[color] hover:text-go">
+                <a href={l.href} className="inline-flex min-h-10 items-center text-white/85 transition-[color] hover:text-go-bright">
                   {l.label}
                 </a>
               </li>
@@ -70,7 +70,7 @@ export default function Footer() {
               href="https://integrate-tech.co.uk"
               target="_blank"
               rel="noopener"
-              className="inline-block py-1.5 text-white/85 underline decoration-white/30 underline-offset-4 transition-colors hover:text-go hover:decoration-go"
+              className="inline-block py-1.5 text-white/85 underline decoration-white/30 underline-offset-4 transition-colors hover:text-go-bright hover:decoration-go-bright"
             >
               Integrate
             </a>

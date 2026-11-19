@@ -2,15 +2,17 @@
 
 /* ---------- Brand system (see /direction.md) ---------- */
 @theme {
-  --color-bg: #f5f4ef;
+  --color-bg: #f5f8fe;
   --color-surface: #ffffff;
-  --color-ink: #0b1a30;
-  --color-ink-2: #13284a;
-  --color-muted: #5a6475;
-  --color-on-dark-muted: #a9b3c4;
-  --color-go: #3fd15a;
-  --color-go-deep: #1d7a33;
-  --color-line: rgb(11 26 48 / 0.12);
+  --color-ink: #0f1f3d;
+  --color-ink-2: #1b3260;
+  --color-muted: #55657f;
+  --color-on-dark-muted: #aebbd3;
+  --color-go: #2563eb;
+  --color-go-deep: #1d4ed8;
+  --color-go-bright: #7cb2ff;
+  --color-go-soft: #e8f0fe;
+  --color-line: rgb(15 31 61 / 0.1);
   --color-line-dark: rgb(255 255 255 / 0.14);
 
   --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
@@ -53,7 +55,7 @@
     line-height: 1.6;
   }
   ::selection {
-    background: var(--color-go);
+    background: #c7dafc;
     color: var(--color-ink);
   }
   :focus-visible {
@@ -62,12 +64,12 @@
     border-radius: 6px;
   }
   .on-dark :focus-visible {
-    outline-color: var(--color-go);
+    outline-color: var(--color-go-bright);
   }
   h1, h2, h3 {
     font-family: var(--font-display);
     font-optical-sizing: auto;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.028em;
     font-weight: 700;
     text-wrap: balance;
   }
@@ -90,15 +92,61 @@
     .container-x { padding-inline: 32px; }
   }
   .section-y {
-    padding-block: clamp(96px, 14vw, 176px);
+    padding-block: clamp(80px, 10vw, 136px);
   }
   .label {
-    font-family: var(--font-mono);
-    font-size: var(--text-label);
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 700;
     line-height: 1.2;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
+
+  /* Soft card in the brand's light-blue system, with a lift on hover */
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    box-shadow: 0 1px 2px rgb(15 31 61 / 0.04), 0 12px 32px -18px rgb(37 99 235 / 0.22);
+  }
+  .card-hover {
+    transition: transform 0.5s var(--ease-out-soft), box-shadow 0.5s var(--ease-out-soft), border-color 0.4s var(--ease-out-soft);
+  }
+  @media (hover: hover) {
+    .card-hover:hover {
+      transform: translateY(-6px);
+      border-color: rgb(37 99 235 / 0.35);
+      box-shadow: 0 2px 4px rgb(15 31 61 / 0.04), 0 28px 48px -22px rgb(37 99 235 / 0.42);
+    }
+  }
+  /* Icon well that fills blue when its card is hovered */
+  .icon-well {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: var(--color-go-soft);
+    color: var(--color-go-deep);
+    transition: background-color 0.4s var(--ease-out-soft), color 0.4s var(--ease-out-soft), transform 0.5s var(--ease-out-soft);
+  }
+  @media (hover: hover) {
+    .card-hover:hover .icon-well {
+      background: var(--color-go);
+      color: #fff;
+      transform: rotate(-6deg) scale(1.06);
+    }
+  }
+  /* Animated underline for text links */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.45s var(--ease-out-soft), color 0.3s;
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible { background-size: 100% 2px; }
 
   /* Masked line reveal used by RevealText (React Bits SplitText adaptation) */
   .split-line-mask {
@@ -124,6 +172,9 @@
   }
   .hero-fade {
     animation: hero-fade 0.9s var(--ease-out-soft) 0.3s both;
+  }
+  .hero-card {
+    animation: hero-fade 1s var(--ease-out-soft) 0.35s both;
   }
   .hero-road-draw {
     stroke-dasharray: 1;
@@ -166,7 +217,7 @@
 
 /* Reduced transparency: solid surfaces instead of blur */
 @media (prefers-reduced-transparency: reduce) {
-  header.fixed { background-color: var(--color-bg) !important; backdrop-filter: none !important; }
+  header.fixed { background-color: #fff !important; backdrop-filter: none !important; }
   .call-bar-shell { background-color: var(--color-ink) !important; backdrop-filter: none !important; }
 }
 
@@ -214,10 +265,16 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-line > span,
   .hero-rise,
-  .hero-fade { animation: none; }
+  .hero-fade,
+  .hero-card { animation: none; }
+  .hero-card {
+    animation: hero-fade 1s var(--ease-out-soft) 0.35s both;
+  }
   .hero-road-draw { animation: none; stroke-dashoffset: 0; }
   .mark-animate .mark-car, .mark-animate .mark-bike, .mark-animate .mark-spark, .wordmark:hover .mark-spark { animation: none; }
   .call-bar { transition: none; }
   .faq-item::details-content { transition: none; }
   .faq-item .faq-icon { transition: none; }
+  .card-hover, .card-hover:hover, .icon-well, .card-hover:hover .icon-well { transition: none; transform: none; }
+  .link-underline { transition: none; }
 }

@@ -118,11 +118,11 @@ export default function RoadBack() {
 
   return (
     <section id="how-it-works" aria-labelledby="how-title" className="on-dark px-2 sm:px-4">
-      <div className="mx-auto max-w-[1440px] overflow-hidden rounded-[32px] bg-ink text-white">
+      <div className="mx-auto max-w-[1440px] overflow-hidden rounded-[32px] bg-[linear-gradient(165deg,#0f1f3d,#122c62)] text-white">
         <div className="container-x pt-24 sm:pt-32 lg:pt-40">
           <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
-              <p className="label text-go">How it works</p>
+              <p className="label text-go-bright">How it works</p>
               <RevealText id="how-title" className="mt-5 text-h2 text-white">
                 The road back, <span className="text-on-dark-muted">in four steps.</span>
               </RevealText>
@@ -143,8 +143,8 @@ export default function RoadBack() {
             {/* Faint full route so the whole journey is visible before it is travelled */}
             <path data-road fill="none" stroke="rgb(255 255 255 / 0.08)" strokeWidth="22" strokeLinecap="round" />
             <g mask="url(#road-back-mask)">
-              <path data-road fill="none" stroke="#3fd15a" strokeWidth="22" strokeLinecap="round" />
-              <path data-road fill="none" stroke="#0b1a30" strokeWidth="2" strokeDasharray="14 14" />
+              <path data-road fill="none" stroke="#3b82f6" strokeWidth="22" strokeLinecap="round" />
+              <path data-road fill="none" stroke="#fff" strokeOpacity="0.85" strokeWidth="2" strokeDasharray="14 14" />
             </g>
           </svg>
 
@@ -160,7 +160,7 @@ export default function RoadBack() {
                 >
                   <span
                     data-node
-                    className={`relative z-10 grid size-12 place-items-center rounded-full border-2 border-white/20 bg-ink font-mono text-sm tabular-nums text-on-dark-muted transition-[background-color,border-color,color,transform] duration-500 ease-[var(--ease-out-soft)] group-data-[active=true]:scale-110 group-data-[active=true]:border-go group-data-[active=true]:bg-go group-data-[active=true]:text-ink md:row-start-1 ${
+                    className={`relative z-10 grid size-12 place-items-center rounded-full border-2 border-white/20 bg-ink font-mono text-sm tabular-nums text-on-dark-muted transition-[background-color,border-color,color,transform] duration-500 ease-[var(--ease-out-soft)] group-data-[active=true]:scale-110 group-data-[active=true]:border-go group-data-[active=true]:bg-go group-data-[active=true]:text-white md:row-start-1 ${
                       right ? "md:col-start-12 md:justify-self-end" : "md:col-start-1"
                     }`}
                   >
@@ -187,7 +187,7 @@ export default function RoadBack() {
         <div className="container-x relative pb-24 pt-10 sm:pb-32 lg:pb-40">
           <div className="flex flex-col items-start gap-8 border-t border-line-dark pt-12 lg:flex-row lg:items-center lg:justify-between">
             <p className="font-display text-h2 font-bold tracking-[-0.035em]">
-              Back on the road. <span className="text-go">Stress free.</span>
+              Back on the road. <span className="text-go-bright">Stress free.</span>
             </p>
             <CallButton size="lg" />
           </div>

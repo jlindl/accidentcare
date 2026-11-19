@@ -12,6 +12,7 @@ export function WhatsAppIcon({ className = "" }: { className?: string }) {
 /** Floating WhatsApp chat button, bottom right. Sits above the mobile call bar. */
 export default function WhatsAppButton() {
   return (
+    <aside aria-label="WhatsApp">
     <a
       href={site.whatsappHref}
       target="_blank"
@@ -24,5 +25,6 @@ export default function WhatsAppButton() {
         <span className="overflow-hidden whitespace-nowrap text-[1.0625rem] font-medium sm:text-[1.125rem]">WhatsApp us</span>
       </span>
     </a>
+    </aside>
   );
 }

@@ -17,12 +17,12 @@ export default function CostExplainer() {
           If the accident wasn&apos;t your fault, the costs of putting it right are claimed from the driver who caused it. Here is how that works.
         </p>
 
-        <Reveal as="ul" stagger={0.08} className="mt-16 grid gap-px overflow-hidden rounded-[20px] border border-line bg-line md:grid-cols-3 lg:mt-24">
+        <Reveal as="ul" stagger={0.08} className="mt-16 grid gap-4 md:grid-cols-3 lg:mt-24">
           {costPoints.map((p, i) => {
             const Icon = icons[i];
             return (
-            <li key={p.title} data-reveal-item className="flex flex-col bg-bg p-7 sm:p-9">
-              <span className="grid size-12 place-items-center rounded-full bg-surface text-ink">
+            <li key={p.title} data-reveal-item className="card card-hover flex flex-col p-7 sm:p-9">
+              <span className="icon-well size-12">
                 <Icon className="size-[22px]" strokeWidth={1.5} aria-hidden="true" />
               </span>
               <h3 className="mt-10 text-h3">{p.title}</h3>

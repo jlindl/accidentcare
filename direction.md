@@ -54,3 +54,20 @@ The call button is in the nav, the hero, the bottom bar on mobile, after the sig
 
 ## Images
 No client photography exists. The logo's raster artwork is too busy for small sizes. Plan: a type-led design plus up to three art-directed Higgsfield images (one consistent style), only after a credit estimate and Jack's approval.
+
+## Revision, 2026-11-19: white and blue
+
+At the client's request the palette moved from paper and green to white and blue, and the hero now follows a two-column layout (headline, call and WhatsApp, chips on the left; a "What we can help with" card on the right over the drawn road). Roads, motion and the crash mark are unchanged apart from colour.
+
+| Token | Hex | Role |
+|---|---|---|
+| bg | #f5f8fe | Page background (light blue-white) |
+| surface | #ffffff | Cards, nav, fact strip |
+| ink | #0f1f3d | Text, How it works panel, footer |
+| muted | #55657f | Secondary text |
+| go | #2563eb | Primary blue: buttons, roads, accents (white text on it) |
+| go-deep | #1d4ed8 | Blue text on light backgrounds |
+| go-bright | #7cb2ff | Blue text on navy |
+| go-soft | #e8f0fe | Tints: chips, icon wells, note panels |
+
+Hover system: `.card-hover` lifts cards 6px with a blue-tinted shadow and border, `.icon-well` fills blue, list rows and chips tint blue, buttons lift. All of it is off under reduced motion and on touch screens.
