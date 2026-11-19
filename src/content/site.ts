@@ -158,11 +158,40 @@ export type Review = {
   name: string; // e.g. "Amir K." (first name + initial)
   detail?: string; // e.g. "PCO driver, Luton"
   rating?: 1 | 2 | 3 | 4 | 5;
-  source: "Google" | "Trustpilot" | "Facebook" | "Direct";
+  source: "Google" | "Trustpilot" | "Facebook" | "Direct" | "Example";
+  /** Dummy review for the demo. Never rendered once site.noindex is false (live). */
+  sample?: true;
   date?: string; // e.g. "October 2026"
 };
 
-export const reviews: Review[] = [];
+// DEMO ONLY (Jack, 2026-11-19): dummy reviews so the prospect can see the section.
+// Replace with real reviews before go-live. These are blocked from rendering on a live site.
+export const reviews: Review[] = [
+  {
+    sample: true,
+    quote: "Someone pulled out on me at a roundabout. One call and my car was recovered, I had a replacement the same week, and they dealt with the other driver's insurer. I didn't have to chase a thing.",
+    name: "Daniel R.",
+    detail: "Driver, Birmingham",
+    rating: 5,
+    source: "Example",
+  },
+  {
+    sample: true,
+    quote: "I was knocked off my bike at a junction. They sorted the recovery, got me on a replacement bike and handled the claim. Straight answers every time I called.",
+    name: "Sofia M.",
+    detail: "Motorcyclist, Leeds",
+    rating: 5,
+    source: "Example",
+  },
+  {
+    sample: true,
+    quote: "As a PCO driver every day off the road costs me. They understood that from the first call and focused on getting me working again while my car was repaired.",
+    name: "Imran H.",
+    detail: "PCO driver, London",
+    rating: 5,
+    source: "Example",
+  },
+];
 
 // Overall rating badge, e.g. { rating: 4.9, count: 37, source: "Google", url: "https://..." }.
 export const reviewSummary: { rating: number; count: number; source: string; url: string } | null = null;

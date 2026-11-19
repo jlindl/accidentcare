@@ -1,36 +1,7 @@
 import { Star } from "lucide-react";
-import { reviews, reviewSummary, type Review } from "@/content/site";
+import { reviews, reviewSummary, site } from "@/content/site";
 import RevealText from "./RevealText";
 import Reveal from "./Reveal";
-
-// Layout placeholders, shown on the dev server only and labelled on screen.
-// They never render in a production build.
-const placeholders: (Review & { placeholder: true })[] = [
-  {
-    placeholder: true,
-    quote: "A real customer review goes here, in their own words. Two or three sentences about getting back on the road.",
-    name: "Customer name",
-    detail: "Driver, town",
-    rating: 5,
-    source: "Google",
-  },
-  {
-    placeholder: true,
-    quote: "A second real review. Ideally from a motorcyclist or a taxi or PCO driver, so every kind of driver sees themselves here.",
-    name: "Customer name",
-    detail: "Motorcyclist, town",
-    rating: 5,
-    source: "Google",
-  },
-  {
-    placeholder: true,
-    quote: "A third real review. Short and specific works best: what happened, what Accident Care sorted, how it felt.",
-    name: "Customer name",
-    detail: "PCO driver, town",
-    rating: 5,
-    source: "Google",
-  },
-];
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -48,9 +19,10 @@ function Stars({ rating }: { rating: number }) {
 }
 
 export default function Reviews() {
-  const isDev = process.env.NODE_ENV === "development";
-  const items: (Review & { placeholder?: true })[] = reviews.length ? reviews : isDev ? placeholders : [];
+  // Dummy (sample) reviews are allowed on the noindexed demo only, never on the live site.
+  const items = site.noindex ? reviews : reviews.filter((r) => !r.sample);
   if (!items.length) return null;
+  const hasSamples = items.some((r) => r.sample);
 
   return (
     <section id="reviews" aria-labelledby="reviews-title" className="section-y">
@@ -61,6 +33,9 @@ export default function Reviews() {
             <RevealText id="reviews-title" className="mt-5 text-h2">
               Back on the road. <span className="text-muted">In their words.</span>
             </RevealText>
+            {hasSamples && (
+              <p className="mt-5 text-[0.875rem] text-muted">Example reviews for this demo. Real customer reviews go here before launch.</p>
+            )}
           </div>
           {reviewSummary && (
             <a
@@ -87,15 +62,8 @@ export default function Reviews() {
             <li
               key={`${r.name}-${i}`}
               data-reveal-item
-              className={`relative flex flex-col rounded-[20px] border bg-surface p-7 sm:p-8 ${
-                r.placeholder ? "border-dashed border-ink/30" : "border-line"
-              }`}
+              className="relative flex flex-col rounded-[20px] border border-line bg-surface p-7 sm:p-8"
             >
-              {r.placeholder && (
-                <span className="label absolute right-4 top-4 rounded-full bg-[#ffd23f] px-2.5 py-1 text-ink">
-                  Placeholder
-                </span>
-              )}
               {r.rating && <Stars rating={r.rating} />}
               <blockquote className="mt-6 flex-1">
                 <p className="font-display text-[1.375rem] font-semibold leading-[1.3] tracking-[-0.02em] text-ink">
@@ -107,10 +75,12 @@ export default function Reviews() {
                   <span className="block font-medium">{r.name}</span>
                   {r.detail && <span className="block text-[0.9375rem] text-muted">{r.detail}</span>}
                 </span>
-                <span className="label shrink-0 text-muted">
-                  {r.source}
-                  {r.date ? ` · ${r.date}` : ""}
-                </span>
+                {r.source !== "Example" && (
+                  <span className="label shrink-0 text-muted">
+                    {r.source}
+                    {r.date ? ` · ${r.date}` : ""}
+                  </span>
+                )}
               </footer>
             </li>
           ))}
