@@ -203,6 +203,35 @@
   }
   .faq-item[open]::details-content { block-size: auto; }
 
+  /* ---------- Inner pages ---------- */
+  /* Stock photos: slow zoom when their frame (or a parent card) is hovered */
+  .photo-img { transition: transform 1.2s var(--ease-out-soft); }
+  @media (hover: hover) {
+    .photo-frame:hover .photo-img,
+    .card-hover:hover .photo-img { transform: scale(1.045); }
+  }
+  /* Frosted card that sits over a photo */
+  .glass-badge {
+    background: rgb(255 255 255 / 0.86);
+    border: 1px solid rgb(255 255 255 / 0.7);
+    box-shadow: 0 20px 40px -24px rgb(15 31 61 / 0.5);
+    backdrop-filter: blur(14px) saturate(1.2);
+  }
+  /* Mobile nav menu */
+  .mobile-menu {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.55s var(--ease-out-soft);
+  }
+  .mobile-menu > div { overflow: hidden; min-height: 0; }
+  .mobile-menu[data-open="true"] { grid-template-rows: 1fr; }
+  .mobile-menu-item {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s var(--ease-out-soft), transform 0.5s var(--ease-out-soft);
+  }
+  .mobile-menu[data-open="true"] .mobile-menu-item { opacity: 1; transform: none; }
+
   /* Mobile call bar */
   .call-bar {
     transform: translateY(calc(100% + 24px));
@@ -277,4 +306,6 @@
   .faq-item .faq-icon { transition: none; }
   .card-hover, .card-hover:hover, .icon-well, .card-hover:hover .icon-well { transition: none; transform: none; }
   .link-underline { transition: none; }
+  .photo-img, .photo-frame:hover .photo-img, .card-hover:hover .photo-img { transition: none; transform: none; }
+  .mobile-menu, .mobile-menu-item { transition: none; }
 }

@@ -1,0 +1,4 @@
+{
+  "_readme": "Places for location posts. Accident Care helps anywhere in the UK but has no local offices, so location posts are switched off in site.config.ts (postTypes.location: false) and this list is intentionally empty. Town pages that read the same with another town's name are doorway pages; don't add places unless the business gains a genuine local presence.",
+  "locations": []
+}

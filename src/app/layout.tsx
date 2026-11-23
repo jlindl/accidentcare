@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import { site } from "@/content/site";
+import { organizationLd, websiteLd } from "@/lib/schema";
+import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -25,9 +27,7 @@ const geistMono = Geist_Mono({
   preload: false,
 });
 
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3217";
+const siteLd = { "@context": "https://schema.org", "@graph": [organizationLd(), websiteLd()] };
 
 const title = "Accident Care | Non-fault accident claims, anywhere in the UK";
 const description =
@@ -74,6 +74,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <SmoothScroll>{children}</SmoothScroll>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd).replace(/</g, "\\u003c") }}
+        />
       </body>
     </html>
   );

@@ -1,0 +1,300 @@
+{
+  "_readme": "Topics for Accident Care's guides (location posts are off: the business is UK-wide with no local offices, so town pages would be doorway pages). Each 'service' is a topic; paired with an audience and a serviceAngle it gives one article keyword. Audience vars: crash is the accident as that audience searches for it (\"motorbike accident\"), crashFor the suffix used with it; for adds the audience to keywords (e.g. ' for motorcyclists'); the main 'drivers' audience leaves it empty so the broad keyword goes to them. 'summary' and 'examples' are treated as true by the writer, so keep them to the facts in src/content/site.ts. Extra fields written into each post's frontmatter by lib/post-file.ts: 'category' (one of src/content/guide-categories.ts) and 'photo' (a file in src/images without .jpg). excludePairs lists 'topic-id:audience-id' combinations that don't make sense. Check every keyword with npm run seo:generate -- --plan --all.",
+  "services": [
+    {
+      "id": "non-fault-claim",
+      "name": "Non-fault accident claims",
+      "term": "non-fault accident claim",
+      "keyword": "non-fault accident claim{for}",
+      "category": "Claims and costs",
+      "photo": "consult",
+      "summary": "Accident Care provides accident claim management for non-fault road traffic accidents anywhere in the UK. It checks on the first call whether the accident wasn't the caller's fault, explains what they're entitled to, arranges recovery, a replacement vehicle and repairs, deals with the at-fault driver's insurer and supports the claim until it's settled. Eligibility depends on the circumstances.",
+      "relatedPaths": [
+        "/how-it-works",
+        "/services",
+        "/faqs"
+      ],
+      "angles": [
+        "guide",
+        "how-it-works",
+        "mistakes",
+        "questions"
+      ],
+      "keywords": {
+        "guide": "non-fault accident claim{for}",
+        "how-it-works": "how does a non-fault claim work{for}",
+        "mistakes": "non-fault claim mistakes{for}",
+        "questions": "what is a non-fault accident{for}"
+      }
+    },
+    {
+      "id": "after-an-accident",
+      "name": "What to do after a road accident",
+      "term": "what to do after a car accident",
+      "keyword": "what to do after a {crash}{crashFor}",
+      "category": "After an accident",
+      "photo": "scene",
+      "summary": "Accident Care's at-the-scene checklist: make it safe (hazard lights on, engine off, everyone away from traffic), call 999 if anyone is hurt or the road is blocked, swap names, addresses, phone numbers, registrations and insurance details, take photos of the vehicles, damage, road and scene and note witnesses, don't admit fault or agree a settlement at the scene, then call Accident Care once everyone is safe.",
+      "relatedPaths": [
+        "/at-the-scene",
+        "/how-it-works",
+        "/faqs"
+      ],
+      "angles": [
+        "guide",
+        "checklist",
+        "mistakes",
+        "first-days"
+      ],
+      "keywords": {
+        "guide": "what to do after a {crash}{crashFor}",
+        "checklist": "{crash} checklist uk{crashFor}",
+        "mistakes": "mistakes to avoid after a {crash}{crashFor}",
+        "first-days": "what to do in the days after a {crash}{crashFor}"
+      }
+    },
+    {
+      "id": "replacement-car",
+      "name": "Replacement car after a non-fault accident",
+      "term": "replacement car after an accident",
+      "keyword": "replacement car after a non-fault accident{for}",
+      "category": "Getting back on the road",
+      "photo": "replacement",
+      "summary": "Accident Care arranges a replacement car while the customer's own car is off the road after a non-fault accident. In a non-fault claim, the cost of the replacement vehicle is claimed from the at-fault driver's insurer, not from the customer. For taxi, PCO and delivery drivers the focus is getting them back to work.",
+      "relatedPaths": [
+        "/services",
+        "/how-it-works",
+        "/who-we-help"
+      ],
+      "angles": [
+        "guide",
+        "how-it-works",
+        "questions"
+      ],
+      "keywords": {
+        "guide": "replacement car after a non-fault accident{for}",
+        "how-it-works": "how do I get a replacement car after an accident{for}",
+        "questions": "who pays for a replacement car after an accident{for}"
+      }
+    },
+    {
+      "id": "replacement-motorbike",
+      "name": "Replacement motorbike after a non-fault accident",
+      "term": "replacement motorbike",
+      "keyword": "replacement motorbike after an accident{for}",
+      "category": "Getting back on the road",
+      "photo": "motorbike",
+      "summary": "Accident Care arranges motorbike recovery from the roadside and a replacement motorbike while the rider's own bike is repaired after a non-fault accident. The costs are claimed from the at-fault driver's insurer.",
+      "relatedPaths": [
+        "/services",
+        "/who-we-help",
+        "/how-it-works"
+      ],
+      "angles": [
+        "guide",
+        "questions"
+      ],
+      "keywords": {
+        "guide": "replacement motorbike after an accident{for}",
+        "questions": "who pays for a replacement motorbike after an accident{for}"
+      }
+    },
+    {
+      "id": "recovery",
+      "name": "Vehicle recovery after an accident",
+      "term": "vehicle recovery after an accident",
+      "keyword": "vehicle recovery after an accident{for}",
+      "category": "Getting back on the road",
+      "photo": "recovery",
+      "summary": "If a car or motorbike can't be driven after a non-fault accident, Accident Care arranges for it to be recovered from the roadside and taken somewhere safe, arranged from the same phone call as everything else. The cost is claimed from the at-fault driver's insurer.",
+      "relatedPaths": [
+        "/services",
+        "/at-the-scene",
+        "/how-it-works"
+      ],
+      "angles": [
+        "guide",
+        "questions"
+      ],
+      "keywords": {
+        "guide": "vehicle recovery after an accident{for}",
+        "questions": "who pays for recovery after a non-fault accident{for}"
+      }
+    },
+    {
+      "id": "repairs",
+      "name": "Accident repairs",
+      "term": "accident repairs",
+      "keyword": "non-fault accident repairs{for}",
+      "category": "Getting back on the road",
+      "photo": "repairs",
+      "summary": "Accident Care arranges and manages repairs after a non-fault accident, start to finish, so the customer isn't left chasing garages or insurers. The cost of repairs is claimed from the at-fault driver's insurer.",
+      "relatedPaths": [
+        "/services",
+        "/how-it-works",
+        "/faqs"
+      ],
+      "angles": [
+        "guide",
+        "questions",
+        "mistakes"
+      ],
+      "keywords": {
+        "guide": "non-fault accident repairs{for}",
+        "questions": "who pays for repairs after a non-fault accident{for}",
+        "mistakes": "{crash} repair mistakes{crashFor}"
+      }
+    },
+    {
+      "id": "injury-claims",
+      "name": "Road accident injury claims",
+      "term": "road accident injury claim",
+      "keyword": "road accident injury claim{for}",
+      "category": "Injury claims",
+      "photo": "phone",
+      "summary": "If someone was hurt in a non-fault road accident, as a driver, rider or passenger, Accident Care helps them start an injury claim on a no win, no fee basis and supports it until it's settled. If the claim isn't successful, they don't pay a fee; any fee on a successful claim is explained before they go ahead. Medical help always comes first.",
+      "relatedPaths": [
+        "/services",
+        "/faqs",
+        "/who-we-help"
+      ],
+      "angles": [
+        "guide",
+        "how-it-works",
+        "questions"
+      ],
+      "keywords": {
+        "guide": "road accident injury claim{for}",
+        "how-it-works": "how does a no win no fee injury claim work{for}",
+        "questions": "can I claim for an injury after a {crash}{crashFor}"
+      }
+    },
+    {
+      "id": "other-insurer",
+      "name": "Dealing with the at-fault driver's insurer",
+      "term": "dealing with the other driver's insurer",
+      "keyword": "dealing with the other driver's insurance after an accident{for}",
+      "category": "Claims and costs",
+      "photo": "consult",
+      "summary": "In a non-fault claim, costs such as recovery, a replacement vehicle and repairs are claimed from the at-fault driver's insurer. Accident Care deals with that insurer and the paperwork on the customer's behalf, so they don't have to do the chasing.",
+      "relatedPaths": [
+        "/how-it-works",
+        "/faqs",
+        "/services"
+      ],
+      "angles": [
+        "guide",
+        "questions"
+      ],
+      "keywords": {
+        "guide": "dealing with the other driver's insurance after an accident{for}",
+        "questions": "should I claim through my own insurance after a non-fault accident{for}"
+      }
+    }
+  ],
+  "audiences": [
+    {
+      "id": "drivers",
+      "name": "drivers",
+      "singular": "driver",
+      "kind": "primary",
+      "examples": "hit from behind at traffic lights, hit while parked, a driver pulling out of a side road, a car off the road for repairs, needing the car for the school run or the commute, an insurer phoning about the accident",
+      "vars": {
+        "for": "",
+        "crash": "car accident",
+        "crashFor": ""
+      }
+    },
+    {
+      "id": "taxi-pco",
+      "name": "taxi and PCO drivers",
+      "singular": "taxi or PCO driver",
+      "kind": "primary",
+      "examples": "every day off the road is a day without fares, a private hire car hit at a junction, a black cab rear-ended in traffic, needing a replacement vehicle to keep working, passengers in the car at the time",
+      "vars": {
+        "for": " for taxi drivers",
+        "crash": "car accident",
+        "crashFor": " for taxi drivers"
+      }
+    },
+    {
+      "id": "motorcyclists",
+      "name": "motorcyclists",
+      "singular": "motorcyclist",
+      "kind": "primary",
+      "examples": "knocked off at a roundabout, a car pulling out without seeing the bike, a bike that needs recovering, riding to work every day, needing a replacement bike while yours is repaired, kit and helmet damaged",
+      "vars": {
+        "for": " for motorcyclists",
+        "crash": "motorbike accident",
+        "crashFor": ""
+      }
+    },
+    {
+      "id": "delivery",
+      "name": "delivery riders and drivers",
+      "singular": "delivery rider or driver",
+      "kind": "primary",
+      "examples": "a scooter or van that's your income, shifts lost while the vehicle is off the road, hit while making a drop, a moped knocked over in a city centre, needing a replacement quickly to keep earning",
+      "vars": {
+        "for": " for delivery drivers",
+        "crash": "road accident",
+        "crashFor": " for delivery drivers"
+      }
+    },
+    {
+      "id": "passengers",
+      "name": "passengers",
+      "singular": "passenger",
+      "kind": "secondary",
+      "examples": "a passenger in a friend's car, a passenger in a taxi, a child or partner in the car, hurt in an accident they had no part in causing, unsure whether they can claim",
+      "vars": {
+        "for": " for passengers",
+        "crash": "car accident",
+        "crashFor": " as a passenger"
+      }
+    }
+  ],
+  "locationAngles": [],
+  "serviceAngles": [
+    {
+      "id": "guide",
+      "keyword": "{service}{for}",
+      "angle": "A calm, practical guide to {service} for {audience}: how it works, what to do first, what you may be entitled to, and how Accident Care can help."
+    },
+    {
+      "id": "how-it-works",
+      "keyword": "how {service} works{for}",
+      "angle": "How it works for {audience}, step by step, from the first call to the end, with the common questions answered plainly."
+    },
+    {
+      "id": "mistakes",
+      "keyword": "{service} mistakes{for}",
+      "angle": "The common mistakes {audience} make, why each one matters, and what to do instead."
+    },
+    {
+      "id": "questions",
+      "keyword": "{service} questions{for}",
+      "angle": "Answers the question in the keyword directly for {audience}, then the follow-up questions they usually have."
+    },
+    {
+      "id": "checklist",
+      "keyword": "{service} checklist{for}",
+      "angle": "A clear, printable-style checklist for {audience}, in the order things happen, with a short reason for each step."
+    },
+    {
+      "id": "first-days",
+      "keyword": "{service} first days{for}",
+      "angle": "What {audience} should do in the hours and days after the accident: who to call, what to keep, what to watch for."
+    }
+  ],
+  "excludePairs": [
+    "replacement-motorbike:drivers",
+    "replacement-motorbike:taxi-pco",
+    "replacement-motorbike:passengers",
+    "replacement-car:motorcyclists",
+    "replacement-car:passengers",
+    "recovery:passengers",
+    "repairs:passengers",
+    "other-insurer:passengers"
+  ]
+}

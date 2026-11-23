@@ -13,12 +13,14 @@ import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { faqs, services, site } from "@/content/site";
+import { ORG_ID } from "@/lib/schema";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "ProfessionalService",
+      "@id": ORG_ID,
       name: site.name,
       description:
         "Accident claim management for non-fault road traffic accidents: vehicle and motorbike recovery, replacement vehicles, repairs and injury claims.",

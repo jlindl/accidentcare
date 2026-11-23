@@ -60,8 +60,8 @@ export default async function Image() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", fontFamily: "Bricolage", fontSize: 68, lineHeight: 1.04, letterSpacing: -2.4, maxWidth: 780 }}>
-          <div>Had an accident that wasn't your fault?</div>
-          <div style={{ color: "#2563eb" }}>We'll take it from here.</div>
+          <div>{"Had an accident that wasn't your fault?"}</div>
+          <div style={{ color: "#2563eb" }}>{"We'll take it from here."}</div>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 20, fontSize: 28 }}>

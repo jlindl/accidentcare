@@ -1,14 +1,10 @@
+import Link from "next/link";
 import { disclaimer, services, site } from "@/content/site";
+import { pages } from "@/content/pages";
 import Wordmark from "./Wordmark";
 import { WhatsAppIcon } from "./WhatsAppButton";
 
-const pageLinks = [
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#services", label: "Services" },
-  { href: "#who-we-help", label: "Who we help" },
-  { href: "#at-the-scene", label: "At the scene" },
-  { href: "#faqs", label: "FAQs" },
-];
+const pageLinks = pages.footer;
 
 export default function Footer() {
   return (
@@ -40,19 +36,23 @@ export default function Footer() {
           <h2 className="label text-on-dark-muted">Services</h2>
           <ul className="mt-3 text-[0.9688rem] text-white/85">
             {services.map((s) => (
-              <li key={s.title} className="flex min-h-10 items-center">{s.title}</li>
+              <li key={s.title}>
+                <Link href="/services" className="inline-flex min-h-10 items-center transition-[color] hover:text-go-bright">
+                  {s.title}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
 
         <nav aria-label="Footer" className="md:col-span-3">
-          <h2 className="label text-on-dark-muted">On this page</h2>
+          <h2 className="label text-on-dark-muted">Explore</h2>
           <ul className="mt-3 text-[0.9688rem]">
             {pageLinks.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="inline-flex min-h-10 items-center text-white/85 transition-[color] hover:text-go-bright">
+                <Link href={l.href} className="inline-flex min-h-10 items-center text-white/85 transition-[color] hover:text-go-bright">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

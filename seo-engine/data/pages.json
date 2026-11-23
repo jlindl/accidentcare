@@ -1,0 +1,53 @@
+{
+  "_readme": "Site pages (other than guides) that articles may link to, each with a label telling the writer what the page is. Guides, the guides index and the contact page (/) are added automatically. Keep in sync with src/content/pages.ts.",
+  "pages": [
+    {
+      "path": "/how-it-works",
+      "label": "How it works: the four steps from the first call to a settled claim, what to have ready when you call, and why a non-fault claim costs you nothing"
+    },
+    {
+      "path": "/services",
+      "label": "Services: vehicle and motorbike recovery, replacement cars and bikes, managed repairs, no win no fee injury claims and full support"
+    },
+    {
+      "path": "/services#recovery",
+      "label": "Services, recovery section: cars and motorbikes recovered from the roadside to somewhere safe"
+    },
+    {
+      "path": "/services#replacement",
+      "label": "Services, replacement vehicles section: a replacement car or motorbike while yours is off the road"
+    },
+    {
+      "path": "/services#repairs",
+      "label": "Services, repairs section: repairs arranged and managed start to finish"
+    },
+    {
+      "path": "/services#injury-claims",
+      "label": "Services, injury claims section: no win, no fee injury claims for drivers, riders and passengers"
+    },
+    {
+      "path": "/who-we-help",
+      "label": "Who we help: drivers, motorcyclists, taxi and PCO drivers, delivery riders and drivers, and passengers"
+    },
+    {
+      "path": "/who-we-help#taxi",
+      "label": "Who we help, taxi and PCO drivers section: off the road means off the clock"
+    },
+    {
+      "path": "/who-we-help#motorcyclists",
+      "label": "Who we help, motorcyclists section: motorbike recovery and a replacement bike"
+    },
+    {
+      "path": "/who-we-help#passengers",
+      "label": "Who we help, passengers section: passengers are rarely at fault and may be able to claim"
+    },
+    {
+      "path": "/at-the-scene",
+      "label": "At the scene: a six-step checklist for straight after an accident (make it safe, 999, swap details, photos, don't admit fault, call Accident Care)"
+    },
+    {
+      "path": "/faqs",
+      "label": "FAQs: what counts as non-fault, what it costs, who we help and what to have ready when you call"
+    }
+  ]
+}
