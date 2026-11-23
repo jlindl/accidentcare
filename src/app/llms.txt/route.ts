@@ -1,4 +1,4 @@
-import { disclaimer, services, site } from "@/content/site";
+import { disclaimer, legalNotice, services, site } from "@/content/site";
 import { getAllGuides } from "@/lib/guides";
 import { absolute } from "@/lib/site-url";
 
@@ -10,6 +10,8 @@ export function GET() {
 > Accident claim management for non-fault road traffic accidents, anywhere in the UK. One phone call (${site.phoneDisplay}) arranges recovery, a replacement car or motorbike, repairs and the claim, for drivers, motorcyclists, taxi and PCO drivers, delivery riders and passengers.
 
 ${disclaimer}
+
+Important: ${legalNotice}
 
 ## Services
 

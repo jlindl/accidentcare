@@ -66,7 +66,7 @@ export const services = [
   },
   {
     title: "Injury claims",
-    // TODO(client): confirm how injury claims are handled (in-house or via regulated partner solicitors) and FCA status.
+    // Client confirmed (2026-11-21): not a law firm; legal work may be referred to regulated solicitors or partner firms (legalNotice). TODO(client): FCA status.
     line: "If you've been hurt, we help you start an injury claim, no win, no fee.",
   },
   {
@@ -147,6 +147,10 @@ export const faqs = [
 
 export const disclaimer =
   "Accident Care provides accident claim management for non-fault road traffic accidents in the UK. Eligibility depends on the circumstances of each accident. Information on this website is general guidance, not legal advice.";
+
+// Wording supplied by the client (Dan, WhatsApp, 2026-11-21), with the company name confirmed by Jack.
+export const legalNotice =
+  "Accident Care Ltd is not a law firm. Where legal services are needed, claims may be referred to regulated solicitors or partner firms.";
 
 // ---------- Reviews ----------
 // Real reviews only. Paste them exactly as written, with the reviewer's permission

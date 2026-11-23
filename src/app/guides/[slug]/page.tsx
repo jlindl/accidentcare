@@ -10,7 +10,7 @@ import GuideCard from "@/components/guides/GuideCard";
 import TableOfContents from "@/components/guides/TableOfContents";
 import { WhatsAppIcon } from "@/components/WhatsAppButton";
 import { photos } from "@/content/photos";
-import { site } from "@/content/site";
+import { legalNotice, site } from "@/content/site";
 import { FAQ_HEADING, formatDate, getAllGuides, getGuide, relatedGuides } from "@/lib/guides";
 import { pageMeta } from "@/lib/meta";
 import { breadcrumbLd, ORG_ID, WEBSITE_ID } from "@/lib/schema";
@@ -167,7 +167,7 @@ async function GuidePageContent({ params }: { params: PageProps<"/guides/[slug]"
             <Mdx source={guide.body} />
             <p className="mt-14 rounded-[16px] border border-line bg-surface px-5 py-4 text-[0.875rem] leading-[1.6] text-muted">
               This guide is general information about non-fault road accidents in the UK, not legal or medical advice. Eligibility
-              depends on the circumstances of each accident. If anyone is hurt, get medical help first.
+              depends on the circumstances of each accident. If anyone is hurt, get medical help first. {legalNotice}
             </p>
           </div>
 

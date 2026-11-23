@@ -8,7 +8,7 @@ import NextPages from "@/components/NextPages";
 import CallButton from "@/components/CallButton";
 import RevealText from "@/components/RevealText";
 import { serviceDetails } from "@/content/pages";
-import { services, site } from "@/content/site";
+import { legalNotice, services, site } from "@/content/site";
 import { pageMeta } from "@/lib/meta";
 import { ORG_ID } from "@/lib/schema";
 
@@ -99,6 +99,11 @@ export default function ServicesPage() {
             photo={s.photo}
             flip={i % 2 === 1}
           >
+            {s.slug === "injury-claims" && (
+              <p className="mt-5 rounded-[16px] border border-go/20 bg-go-soft px-5 py-4 text-[0.9375rem] leading-[1.6] text-ink/85">
+                <strong className="font-semibold text-ink">Important:</strong> {legalNotice}
+              </p>
+            )}
             {i === serviceDetails.length - 1 && <CallButton size="md" className="mt-8" />}
           </FeatureSplit>
         ))}

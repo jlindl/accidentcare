@@ -12,8 +12,9 @@
  * CloudKicks, PoundMart and mylife/: town-by-town posts would be doorway pages.
  *
  * Where the facts come from: src/content/site.ts (Jack's intake, 2026-11-19).
- * Check them again whenever that file changes. TODO(client): injury claims
- * wording and regulatory status are still to be confirmed with the client.
+ * Check them again whenever that file changes. The client confirmed (2026-11-21)
+ * that Accident Care Ltd is not a law firm and may refer legal work to regulated
+ * solicitors or partner firms. TODO(client): regulatory status.
  */
 export const site = {
   /** Business or brand name, as articles should write it. */
@@ -61,6 +62,7 @@ export const site = {
     "On the first call, Accident Care checks whether the accident wasn't the customer's fault and explains what they're entitled to. There's no obligation.",
     "For taxi, PCO and delivery drivers, Accident Care focuses on getting them back on the road and working again as part of the claim.",
     "Eligibility depends on the circumstances of each accident.",
+    "Accident Care Ltd is not a law firm. Where legal services are needed, claims may be referred to regulated solicitors or partner firms.",
   ],
   /** Who reads the blog and what they care about. */
   readers:
@@ -79,7 +81,8 @@ export const site = {
   rules: [
     "No legal advice. Explain how non-fault claims generally work in plain terms, say eligibility depends on the circumstances, and never promise an outcome, an amount of compensation or that a claim will succeed.",
     "Never state compensation amounts, fees, percentages, success rates, timescales for repairs, payouts or settlement, or how quickly a replacement vehicle arrives. Say it depends on the circumstances and that Accident Care explains it on the first call.",
-    "Only describe Accident Care services that appear in the facts. Don't claim it is regulated or authorised by any body, has offices or depots, offers 24/7 cover, has a panel of solicitors, or covers fault accidents.",
+    "Only describe Accident Care services that appear in the facts. Don't claim it is regulated or authorised by any body, has offices or depots, offers 24/7 cover, has its own or a named panel of solicitors, or covers fault accidents.",
+    "Accident Care Ltd is not a law firm. Never call it a law firm, solicitors or legal representatives, and never say it gives legal advice or represents the reader in court. When legal help comes up, say that where legal services are needed, claims may be referred to regulated solicitors or partner firms.",
     "Safety first: whenever the scene of an accident comes up, say to make it safe and call 999 if anyone is hurt or the road is blocked. For injuries, tell readers to get medical help first (999, NHS 111 or their GP). Never give medical advice.",
     "Legal duties at the scene: only state long-established basics (stop, swap details, report to the police when required), and tell readers to check the Highway Code and GOV.UK for the current rules.",
     "Never name other claims companies, insurers, garages, hire firms or solicitors, or compare Accident Care with them. You may name public bodies such as the police, the DVLA, the NHS, GOV.UK and the Highway Code where the advice depends on them.",

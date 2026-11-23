@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { disclaimer, services, site } from "@/content/site";
+import { disclaimer, legalNotice, services, site } from "@/content/site";
 import { pages } from "@/content/pages";
 import Wordmark from "./Wordmark";
 import { WhatsAppIcon } from "./WhatsAppButton";
@@ -61,6 +61,9 @@ export default function Footer() {
 
       <div className="container-x">
         <div className="border-t border-line-dark py-8">
+        <p className="mb-5 max-w-[90ch] rounded-[14px] border border-white/15 bg-white/[0.05] px-4 py-3.5 text-[0.875rem] leading-[1.6] text-white/85">
+          <strong className="font-semibold text-white">Important:</strong> {legalNotice}
+        </p>
         <p className="max-w-[90ch] text-[0.8438rem] leading-[1.6] text-on-dark-muted">{disclaimer}</p>
         <div className="mt-6 flex flex-col gap-3 text-[0.8438rem] text-on-dark-muted sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; 2026 {site.name}</p>

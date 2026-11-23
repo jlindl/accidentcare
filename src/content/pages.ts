@@ -75,7 +75,7 @@ export const serviceDetails: ServiceDetail[] = [
   {
     slug: "injury-claims",
     label: "Injury claims",
-    // TODO(client): confirm how injury claims are handled (in-house or via regulated partner solicitors) and FCA status.
+    // Client confirmed (2026-11-21): not a law firm; legal work may be referred to regulated solicitors or partner firms. TODO(client): FCA status.
     title: "Hurt in the accident? You may be able to claim.",
     intro:
       "If you've been hurt as a driver, rider or passenger, we help you start an injury claim on a no win, no fee basis, and support it until it's settled.",
@@ -187,6 +187,10 @@ export const faqGroups = [
       {
         q: "What should I have ready when I call?",
         a: "Whatever you have: the date and place, the other driver's details and registration, any photos, and your own vehicle and insurance details. Don't worry if you don't have everything.",
+      },
+      {
+        q: "Are you a law firm?",
+        a: "No. Accident Care Ltd is not a law firm. Where legal services are needed, claims may be referred to regulated solicitors or partner firms.",
       },
       {
         q: "What happens after I call?",
